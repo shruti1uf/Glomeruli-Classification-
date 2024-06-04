@@ -96,7 +96,7 @@ The dataset was split into training, validation, and test sets. The training pro
 - The dataset consists of histopathological images of glomeruli labeled as globally sclerotic (1) or non-globally sclerotic (0). The images are organized into two sub-folders within the `Glomeruli_Classification` directory: `globally_sclerotic_glomeruli` and `non_globally_sclerotic_glomeruli`. Additionally, image annotations are provided in the `public.csv` file, containing image names and their corresponding labels.
 
 #### Data Preprocessing Steps:
-- **Data Loading**: The annotations from the public.csv file are read into a Pandas DataFrame to facilitate further processing.
+- **Data Loading**: The annotations from the `public.csv` file are read into a Pandas DataFrame to facilitate further processing.
 - **Image Augmentation**: Image augmentation techniques such as random horizontal and vertical flips, random rotation, color jitter, and random grayscale are applied to increase the diversity of the training dataset and enhance model generalization.
 - **Image Normalization**: Images are resized to 224x224 pixels and normalized using mean and standard deviation values of [0.485, 0.456, 0.406] and [0.229, 0.224, 0.225] respectively, as recommended for models pretrained on ImageNet.
 - **Dataset Splitting**: The dataset is split into training (65%), validation (20%), and test sets (15%) using stratified splitting to preserve the class distribution in each set.
