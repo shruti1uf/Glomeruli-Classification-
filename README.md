@@ -145,6 +145,6 @@ python googlenet.py
 After training the model, you can evaluate it on a new set of images using the evaluation.py script. The script requires the path to a folder containing glomeruli image patches as input and outputs a CSV file with the model's predictions.
 Run the script as follows:
 ```bash
-python evaluation.py <path_to_image_folder> model/model.pth evaluation.csv
+python evaluation.py 
 ```
 Replace <path_to_image_folder> with the path to your image folder.
