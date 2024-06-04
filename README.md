@@ -78,29 +78,45 @@ The dataset was split into training, validation, and test sets. The training pro
 - **Scheduler**: OneCycleLR
 - **Loss Function**: BCEWithLogitsLoss
 
-## Theoretical Justification for Component Choices
-
-### Model Selection
+### Theoretical Justification for Component Choices
 
 - **GoogleNet**: Chosen due to its efficiency and effectiveness in learning from a relatively small dataset while providing a high level of accuracy. GoogleNet, with its inception modules, balances computational efficiency and model performance, making it suitable for our task.
 
-### Optimizer Selection
-
 - **RMSProp**: RMSProp was chosen as it is an adaptive learning rate method designed to handle non-stationary objectives, and it worked best for this binary classification task. RMSProp adjusts the learning rate based on the average of recent gradients, which helps in converging quickly and effectively.
-
-### Scheduler Selection
 
 - **OneCycleLR**: OneCycleLR was used due to its ability to cyclically adjust the learning rate, which helps in finding a better minimum and avoids local minima. This scheduler adjusts the learning rate in a cyclical manner, which can lead to improved performance and faster convergence.
 
-### Loss Function
-
 - **BCEWithLogitsLoss**: Combines a Sigmoid layer and the binary cross-entropy loss in one single class, making it more stable for binary classification tasks. This loss function is suitable for binary classification as it ensures numerical stability and efficient computation of gradients.
 
+## ML Pipeline and its implementation.
+- This repository contains the implementation of a machine learning pipeline for the classification of glomeruli as globally sclerotic or non-globally sclerotic using deep learning techniques.    - The pipeline consists of several essential steps, including data preprocessing, model training, and evaluation.
 
+### Dataset and Preprocessing Procedure:
+- The dataset consists of histopathological images of glomeruli labeled as globally sclerotic (1) or non-globally sclerotic (0). The images are organized into two sub-folders within the Glomeruli_Classification directory: globally_sclerotic_glomeruli and non_globally_sclerotic_glomeruli. Additionally, image annotations are provided in the public.csv file, containing image names and their corresponding labels.
 
+#### Data Preprocessing Steps:
+- **Data Loading**: The annotations from the public.csv file are read into a Pandas DataFrame to facilitate further processing.
+- **Image Augmentation**: Image augmentation techniques such as random horizontal and vertical flips, random rotation, color jitter, and random grayscale are applied to increase the diversity of the training dataset and enhance model generalization.
+- **Image Normalization**: Images are resized to 224x224 pixels and normalized using mean and standard deviation values of [0.485, 0.456, 0.406] and [0.229, 0.224, 0.225] respectively, as recommended for models pretrained on ImageNet.
+- **Dataset Splitting**: The dataset is split into training (65%), validation (20%), and test sets (15%) using stratified splitting to preserve the class distribution in each set.
+
+### Training and Validation Procedure:
+- For this task, the GoogLeNet architecture, pretrained on ImageNet, is used as the base model. The final fully connected layer of the GoogLeNet model is modified to output binary classifications. The training process involves optimizing the model parameters using the RMSprop optimizer with a learning rate of 0.0001 and weight decay of 1e-4.
+
+#### Training Loop Steps:
+- **Data Loading**: Training and validation datasets are loaded using DataLoader instances, which provide efficient batching and data shuffling.
+- **Model Initialization**: The modified GoogLeNet model is initialized and moved to the appropriate device (GPU if available).
+- **Loss Function**: Binary Cross Entropy with Logits Loss (BCEWithLogitsLoss) is used as the loss function, suitable for binary classification tasks.
+- **Learning Rate Scheduler**: A OneCycleLR scheduler is employed to adjust the learning rate dynamically during training, enhancing convergence and generalization.
+
+### Evaluation Metrics:  
+- The trained model is evaluated on a separate test set to assess its performance using various metrics, including accuracy, precision, recall, and F1 score. Additionally, visualizations such as confusion matrix and ROC curve are generated to provide insights into the model's behavior.
+    - **Accuracy**: Ratio of correctly predicted observations to the total observations.
+    - **Precision**: Ratio of true positive predictions to the total predicted positives.
+    - **Recall**: Ratio of true positive predictions to the total actual positives.
+    - **F1 Score**: Harmonic mean of precision and recall, indicating a balance between the two metrics.
 
 ## Performance Metrics
-
 The model's performance is evaluated based on accuracy, precision, recall, and F1 score. These metrics provide a comprehensive understanding of the model's ability to classify sclerotic and non-sclerotic glomeruli accurately.
 
 - **Test Accuracy**: 0.9792
