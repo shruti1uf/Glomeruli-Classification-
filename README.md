@@ -89,10 +89,11 @@ The dataset was split into training, validation, and test sets. The training pro
 - **BCEWithLogitsLoss**: Combines a Sigmoid layer and the binary cross-entropy loss in one single class, making it more stable for binary classification tasks. This loss function is suitable for binary classification as it ensures numerical stability and efficient computation of gradients.
 
 ## ML Pipeline and its implementation.
-- This repository contains the implementation of a machine learning pipeline for the classification of glomeruli as globally sclerotic or non-globally sclerotic using deep learning techniques.    - The pipeline consists of several essential steps, including data preprocessing, model training, and evaluation.
+- This repository contains the implementation of a machine learning pipeline for the classification of glomeruli as globally sclerotic or non-globally sclerotic using deep learning techniques.
+- The pipeline consists of several essential steps, including data preprocessing, model training, and evaluation.
 
 ### Dataset and Preprocessing Procedure:
-- The dataset consists of histopathological images of glomeruli labeled as globally sclerotic (1) or non-globally sclerotic (0). The images are organized into two sub-folders within the `Glomeruli_Classification` directory: `globally_sclerotic_glomeruli` and `non_globally_sclerotic_glomeruli`. Additionally, image annotations are provided in the public.csv file, containing image names and their corresponding labels.
+- The dataset consists of histopathological images of glomeruli labeled as globally sclerotic (1) or non-globally sclerotic (0). The images are organized into two sub-folders within the `Glomeruli_Classification` directory: `globally_sclerotic_glomeruli` and `non_globally_sclerotic_glomeruli`. Additionally, image annotations are provided in the `public.csv` file, containing image names and their corresponding labels.
 
 #### Data Preprocessing Steps:
 - **Data Loading**: The annotations from the public.csv file are read into a Pandas DataFrame to facilitate further processing.
