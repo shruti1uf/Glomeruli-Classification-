@@ -131,7 +131,7 @@ Ensure you have Conda installed. Clone the project repository, then create and a
 
 ```bash
 conda env create -f environment.yml
-conda activate Gomeruli_Classification
+conda activate Glomeruli_Classification
 ```
 
 ## Model Training
