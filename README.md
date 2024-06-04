@@ -37,10 +37,10 @@ Several pre-trained models were evaluated based on their performance in terms of
   - F1 Score: 0.9379
 
 - **VGG19**:
- - Training was attempted but the model took too long to train fully within the given constraints.
+  - Training was attempted but the model took too long to train fully within the given constraints.
   
 - **ResNet50**:
- - Training was attempted but the model took too long to train fully within the given constraints.
+  - Training was attempted but the model took too long to train fully within the given constraints.
 
 GoogleNet provided the best performance with the highest F1-score of apprpximately 94%, and accuracy of 98%. Therefore, it was chosen as the final model for this project. AlexNet was fast but the maximum F1-score and accuracy it had was 87% and 96% respectively.
 
