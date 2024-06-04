@@ -16,7 +16,7 @@ Additionally, a `public.csv` file contains the names of each patch and their cor
 
 ### Model Selection
 
-Several pre-trained models were evaluated based on their performance in terms of F1-score. The models tested include:
+Several pre-trained models were evaluated based on their performance in terms of F1-score and accuracy. The models tested include:
 - AlexNet
 - VGG19
 - ResNet50
