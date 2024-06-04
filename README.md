@@ -148,3 +148,49 @@ Run the script as follows:
 python evaluation.py 
 ```
 Replace <path_to_image_folder> with the path to your image folder.
+
+## Dependencies
+This project is developed in Spyder, under an Anaconda environment, and utilizes PyTorch for the deep learning components. Ensure you have Anaconda and Spyder installed on your system.The project utilizes the following libraries and tools:
+- **Python**: The core programming language used for development.
+- **Pandas**: A powerful library for data manipulation and analysis.
+- **Matplotlib**: A plotting library for creating visualizations.
+- **Seaborn**: A statistical data visualization library based on Matplotlib.
+- **PyTorch**: A deep learning framework providing data structures for tensors and operations.
+- **scikit-learn**: A machine learning library providing tools for data splitting and evaluation metrics.
+- **Pillow (PIL)**: A library for opening, manipulating, and saving various image file formats.
+- **tqdm**: A library for creating progress bars in Python.
+For a complete list of dependencies, refer to the environment.yml file.
+
+## Project Structure
+ The project directory structure is as follows:
+
+```bash
+|-- Glomeruli_Classification
+|   |-- googlenet.py
+|   |-- evaluation.py
+|   |-- evaluation.csv
+|   |-- public.csv
+|   |-- environment.yml
+|   |-- globally_sclerotic_glomeruli
+        |-- images1
+|   |-- non_globally_sclerotic_glomeruli
+        |-- images0
+|   |-- Plots
+        |-- ROC_cruve
+        |-- Confusion_matrix
+```
+- `googlenet.py` : Script for model training using GoogleNet architecture.
+- `evaluation.py` : Script for evaluating the trained model on new images.
+- `evaluation.csv` : CSV file containing evaluation results.
+- `public.csv` : CSV file with public data.
+- `environment.yml` : YAML file to recreate the project environment.
+- `globally_sclerotic_glomeruli` : Folder containing glomeruli image patches for globally sclerotic class.
+- `non_globally_sclerotic_glomeruli` : Folder containing glomeruli image patches for non-globally sclerotic class.
+- `Plots` : Directory containing generated plots such as ROC curve and confusion matrix.
+
+### Note on Replicating the Project
+You can replicate the project structure as defined above and open it as a project in Spyder. To run the .py files successfully, **ensure to modify the paths in the code to match the absolute path of the dataset or the images folder on your system**. This adjustment will ensure that the code runs without any warnings or errors related to file paths.
+
+## Reference
+Elharroussa, O., Akbaria, Y., Almaadeeda, N., & Al-Maadeeda, S. Backbones-Review: Feature Extraction Networks for Deep Learning and Deep Reinforcement Learning Approaches. Department of Computer Science and Engineering, Qatar University, Doha, Qatar.
+
