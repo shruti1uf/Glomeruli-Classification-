@@ -92,7 +92,7 @@ The dataset was split into training, validation, and test sets. The training pro
 - This repository contains the implementation of a machine learning pipeline for the classification of glomeruli as globally sclerotic or non-globally sclerotic using deep learning techniques.    - The pipeline consists of several essential steps, including data preprocessing, model training, and evaluation.
 
 ### Dataset and Preprocessing Procedure:
-- The dataset consists of histopathological images of glomeruli labeled as globally sclerotic (1) or non-globally sclerotic (0). The images are organized into two sub-folders within the Glomeruli_Classification directory: globally_sclerotic_glomeruli and non_globally_sclerotic_glomeruli. Additionally, image annotations are provided in the public.csv file, containing image names and their corresponding labels.
+- The dataset consists of histopathological images of glomeruli labeled as globally sclerotic (1) or non-globally sclerotic (0). The images are organized into two sub-folders within the `Glomeruli_Classification` directory: `globally_sclerotic_glomeruli` and `non_globally_sclerotic_glomeruli`. Additionally, image annotations are provided in the public.csv file, containing image names and their corresponding labels.
 
 #### Data Preprocessing Steps:
 - **Data Loading**: The annotations from the public.csv file are read into a Pandas DataFrame to facilitate further processing.
@@ -131,6 +131,7 @@ Ensure you have Conda installed. Clone the project repository, then create and a
 ```bash
 conda env create -f environment.yml
 conda activate Gomeruli_Classification
+```
 
 ## Model Training
 
@@ -138,12 +139,12 @@ To train the model, execute the following command:
 
 ```bash
 python googlenet.py
-
+```
 ## Model Evaluation
 
 After training the model, you can evaluate it on a new set of images using the evaluation.py script. The script requires the path to a folder containing glomeruli image patches as input and outputs a CSV file with the model's predictions.
 Run the script as follows:
 ```bash
 python evaluation.py <path_to_image_folder> model/model.pth evaluation.csv
+```
 Replace <path_to_image_folder> with the path to your image folder.
-
